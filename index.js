@@ -3,7 +3,9 @@ module.exports = {
         'browser': true,
         'es2021': true,
     },
-    'extends': 'eslint:recommended',
+    'extends': [
+        'eslint:recommended'
+    ],
     'parserOptions': {
         'ecmaVersion': 12,
         'sourceType': 'module',
@@ -14,10 +16,10 @@ module.exports = {
         'array-bracket-spacing': 'error',
         'array-callback-return': 'error',
         'array-element-newline': ['error',
-            { 'multiline': true, 'minItems': 3 },
+            {'multiline': true, 'minItems': 3},
         ],
-        'arrow-body-style': 'error',
-        'arrow-parens': 'error',
+        'arrow-body-style': ['error', 'as-needed'],
+        'arrow-parens': 'off',
         'arrow-spacing': [
             'error',
             {
@@ -30,11 +32,12 @@ module.exports = {
         'brace-style': 'error',
         'callback-return': 'error',
         'camelcase': 'off',
-        'capitalized-comments': [
-            'error',
-            'never'
-        ],
-        'class-methods-use-this': 'error',
+        'capitalized-comments': ['error',
+            'always', {
+                'ignoreConsecutiveComments': true,
+                'ignoreInlineComments': true
+            }],
+        'class-methods-use-this': 'off',
         'comma-dangle': 'off',
         'comma-spacing': [
             'error',
@@ -103,7 +106,7 @@ module.exports = {
         'lines-around-comment': 'error',
         'lines-around-directive': 'error',
         'lines-between-class-members': 'error',
-        'max-classes-per-file': 'error',
+        'max-classes-per-file': 'off',
         'max-depth': 'error',
         'max-len': [
             'error',
@@ -126,7 +129,7 @@ module.exports = {
         'newline-per-chained-call': 'error',
         'no-alert': 'error',
         'no-array-constructor': 'error',
-        'no-await-in-loop': 'error',
+        'no-await-in-loop': 'warn',
         'no-bitwise': 'error',
         'no-buffer-constructor': 'error',
         'no-caller': 'error',
@@ -221,7 +224,7 @@ module.exports = {
         'no-useless-constructor': 'error',
         'no-useless-rename': 'error',
         'no-useless-return': 'error',
-        'no-useless-scape': 'warn',
+        'no-useless-escape': 'warn',
         'no-var': 'error',
         'no-void': 'error',
         'no-warning-comments': 'warn',
@@ -247,7 +250,7 @@ module.exports = {
         'padded-blocks': 'off',
         'padding-line-between-statements': 'error',
         'prefer-arrow-callback': 'error',
-        'prefer-const': ['error', {'destructuring': 'any'}],
+        'prefer-const': ['error', {'destructuring': 'all'}],
         'prefer-destructuring': 'off',
         'prefer-exponentiation-operator': 'error',
         'prefer-named-capture-group': 'off',
@@ -280,7 +283,7 @@ module.exports = {
         'sort-keys': 'off',
         'sort-vars': 'off',
         'space-before-blocks': 'error',
-        'space-before-function-paren': 'error',
+        'space-before-function-paren': 'off',
         'space-in-parens': [
             'error',
             'never'
